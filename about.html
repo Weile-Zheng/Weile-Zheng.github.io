@@ -122,7 +122,32 @@
 			}
 
 			.work-heading {
-				margin-bottom: 0.4rem;
+				margin: 0;
+			}
+
+			.about-text h1.major,
+			.about-text h3,
+			.about-text h4 {
+				margin-top: 0;
+				margin-bottom: 0.75rem;
+				line-height: 1.3;
+			}
+
+			.about-text h1.major {
+				margin-bottom: 1rem;
+			}
+
+			.about-section {
+				margin-top: 1.75rem;
+			}
+
+			.about-section > :last-child {
+				margin-bottom: 0;
+			}
+
+			.about-section ul {
+				margin: 0;
+				padding-left: 1.25rem;
 			}
 
 			@media screen and (max-width: 980px) {
@@ -176,7 +201,7 @@
 					<div class="inner about-container">
 						<div class="about-text">
 							<h1 class="major">About</h1>
-							<p style="margin-top: -35px">
+							<p>
 								I am interested in modern
 								<strong>distributed systems</strong>, <strong>databases internals</strong>,
 								<strong>compilers</strong>, and <strong>ML/AI systems</strong>. I enjoy
@@ -189,31 +214,34 @@
 								pursuing a B.S. in Computer Science.
 							</p>
 
-							<h3 class="work-heading">Work Experience</h3>
-							<div class="work-experience">
-								<div class="work-entry">
-									<h4>Michigan Database Group (University of Michigan)</h4>
-									<p class="work-meta">
-										<span><strong>Position:</strong> Research Assistant</span>
-										<span> &nbsp;|&nbsp; </span>
-										<span><strong>Timeline:</strong> TBD</span>
-									</p>
-									<p class="work-desc">Machine learning for databases with Prof. Lin Ma.</p>
-								</div>
+							<div class="about-section">
+								<h3 class="work-heading">Work Experience</h3>
+								<div class="work-experience">
+									<div class="work-entry">
+										<h4>Michigan Database Group (University of Michigan)</h4>
+										<p class="work-meta">
+											<span><strong>Position:</strong> Research Assistant</span>
+											<span> &nbsp;|&nbsp; </span>
+											<span><strong>Timeline:</strong> TBD</span>
+										</p>
+										<p class="work-desc">Machine learning for databases with Prof. Lin Ma.</p>
+									</div>
 
-								<div class="work-entry">
-									<h4>Ordered Systems Lab</h4>
-									<p class="work-meta">
-										<span><strong>Position:</strong> Research Assistant</span>
-										<span> &nbsp;|&nbsp; </span>
-										<span><strong>Timeline:</strong> TBD</span>
-									</p>
-									<p class="work-desc">Distributed systems checkers.</p>
+									<div class="work-entry">
+										<h4>Ordered Systems Lab</h4>
+										<p class="work-meta">
+											<span><strong>Position:</strong> Research Assistant</span>
+											<span> &nbsp;|&nbsp; </span>
+											<span><strong>Timeline:</strong> TBD</span>
+										</p>
+										<p class="work-desc">Distributed systems checkers.</p>
+									</div>
 								</div>
 							</div>
 
-							<h3>Projects</h3>
-							<ul>
+							<div class="about-section">
+								<h3>Projects</h3>
+								<ul>
 								<li>BusTub (CMU 15-445)</li>
 								<li>
 									<a href="village_rim.html"><em>Village Rim</em></a> (Unity game)
@@ -228,7 +256,8 @@
 								</li>
 								<li>Deep learning–based auto-segmentation tools for human body CT scans</li>
 								<li>Web App: Insta485 (Instagram-style full-stack app)</li>
-							</ul>
+								</ul>
+							</div>
 
 							<p>
 								Beyond academics and careers, I enjoy everything about sports: playing
