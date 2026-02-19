@@ -1,11 +1,11 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 	<head>
 		<title>About</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="icon" href="images/avatar.jpeg" type="image/jpeg">
+		<link rel="icon" href="images/avatar.jpeg" type="image/jpeg" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 			.about-container {
@@ -31,42 +31,43 @@
 				flex: 1;
 				max-width: 50%;
 				display: flex;
-				flex-direction: column;   /* 上下布局 */
+				flex-direction: column; /* 上下布局 */
 				justify-content: space-between; /* 上下分开一点 */
-				align-items: flex-start;      /* 水平居中 */
+				align-items: flex-start; /* 水平居中 */
 			}
 
 			.about-image .top {
-				flex: 2;                  /* 上半部分占更多空间 */
+				flex: 2; /* 上半部分占更多空间 */
 				display: flex;
 				justify-content: center;
 				align-items: center;
 			}
 
 			.about-image .bottom {
-				flex: 1;                  /* 下半部分占较少空间 */
+				flex: 1; /* 下半部分占较少空间 */
 				display: flex;
 				justify-content: center;
 				align-items: flex-start;
 				margin-top: 10px;
 			}
 
-
 			.about-icons {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: flex-start;
-				gap: 8px;      
+				gap: 8px;
 				margin-top: 20px;
 			}
 
 			.about-icons a {
 				font-size: 1rem;
 				color: #333;
-				text-decoration: none !important; 
+				text-decoration: none !important;
 				font-weight: normal !important;
-				transition: color 0.2s ease, transform 0.2s ease;
+				transition:
+					color 0.2s ease,
+					transform 0.2s ease;
 			}
 
 			.about-icons a span {
@@ -75,9 +76,9 @@
 
 			.about-icons a:last-child {
 				border-top: 1px solid rgba(0, 0, 0, 0.05);
-				padding-top: 25px;     
-				margin-top: 25px;     
-				width: 420px;     
+				padding-top: 25px;
+				margin-top: 25px;
+				width: 420px;
 			}
 
 			.about-image img {
@@ -90,7 +91,8 @@
 				.about-container {
 					flex-direction: column;
 				}
-				.about-text, .about-image {
+				.about-text,
+				.about-image {
 					max-width: 100%;
 				}
 			}
@@ -102,13 +104,12 @@
 			<!-- Header -->
 			<header id="header">
 				<a href="index.html" class="title">
-					<img src="images/avatar.jpeg" alt="My Avatar" class="logo">
+					<img src="images/avatar.jpeg" alt="My Avatar" class="logo" />
 				</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html" class="active">About</a></li>
-						<li><a href="portfolio.html#two">Projects</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -118,62 +119,99 @@
 				<!-- Main -->
 				<section id="main" class="wrapper">
 					<div class="inner about-container">
-						
 						<div class="about-text">
 							<h1 class="major">About</h1>
-							<p style="margin-top:-35px">
-								I am interested in <strong>distributed systems, databases</strong>, and applying 
-								<strong>machine learning</strong> and <strong>AI</strong> to other fields. 
-								I enjoy creating solutions that are fast, scalable, and useful. 
-								I also like to explore other areas in tech, and I am currently learning 
-								about <strong>game development</strong>.
+							<p style="margin-top: -35px">
+								I am interested in <strong>distributed systems, databases</strong>, and
+								applying <strong>machine learning</strong> and <strong>AI</strong> to other
+								fields. I enjoy creating solutions that are fast, scalable, and useful. I also
+								like to explore other areas in tech, and I am currently learning about
+								<strong>game development</strong>.
 							</p>
 
 							<p>
-								I am currently studying at the <strong>University of Michigan</strong>, 
-								pursuing a B.S. in Computer Science. 
-								While at Michigan, I have worked on / am working on:
+								I am currently studying at the <strong>University of Michigan</strong>,
+								pursuing a B.S. in Computer Science. While at Michigan, I have worked on / am
+								working on:
 							</p>
 
 							<h3>Research</h3>
 							<ul>
-								<li>Machine learning for databases with the Michigan Database Group (Prof. Lin Ma).</li>
+								<li>
+									Machine learning for databases with the Michigan Database Group (Prof. Lin
+									Ma).
+								</li>
 								<li>Distributed systems checkers at Ordered Systems Lab.</li>
 							</ul>
 
 							<h3>Projects</h3>
 							<ul>
 								<li>BusTub (CMU 15-445)</li>
-								<li><a href="village_rim.html"><em>Village Rim</em></a> (Unity game)</li>
+								<li>
+									<a href="village_rim.html"><em>Village Rim</em></a> (Unity game)
+								</li>
 								<li>Linearizable Distributed Key-Value Store</li>
-								<li><a href="zelda.html"><em>The Legend of Zelda: Dungeons</em></a> (Unity game)</li>
-								<li><a href="cubeverse.html"><em>Cubeverse: Gravitas</em></a> (Unity game)</li>
+								<li>
+									<a href="zelda.html"><em>The Legend of Zelda: Dungeons</em></a> (Unity
+									game)
+								</li>
+								<li>
+									<a href="cubeverse.html"><em>Cubeverse: Gravitas</em></a> (Unity game)
+								</li>
 								<li>Deep learning–based auto-segmentation tools for human body CT scans</li>
 								<li>Web App: Insta485 (Instagram-style full-stack app)</li>
 							</ul>
 
 							<p>
-								Beyond academics and careers, I enjoy everything about sports: 
-								playing basketball, powerlifting, tennis, and following exciting matches 
-								across basketball, soccer, and tennis. 
-								I am also a sports game fan, currently enjoying <strong>NBA 2K</strong> 
+								Beyond academics and careers, I enjoy everything about sports: playing
+								basketball, powerlifting, tennis, and following exciting matches across
+								basketball, soccer, and tennis. I am also a sports game fan, currently
+								enjoying <strong>NBA 2K</strong>
 								and football titles. These passions keep me balanced and motivated.
 							</p>
 						</div>
 
-						<div class="about-image" style="text-align:left; max-width:400px;">
-							 <div class="top">
-								<img src="images/about_pic_2.jpg" 
-									alt="About me photo" 
-									style="max-width:100%; height:auto; border-radius:12px; transform:rotate(-3deg); margin-bottom:20px;">
+						<div class="about-image" style="text-align: left; max-width: 400px">
+							<div class="top">
+								<img
+									src="images/about_pic_2.jpg"
+									alt="About me photo"
+									style="
+										max-width: 100%;
+										height: auto;
+										border-radius: 12px;
+										transform: rotate(-3deg);
+										margin-bottom: 20px;
+									"
+								/>
 							</div>
 
 							<div class="bottom">
 								<div class="about-icons">
-									<a href="https://www.linkedin.com/in/yijiang-tian/" class="icon brands fa-linkedin-in" target="_blank"><span class="ml-4">LinkedIn</span></a> 
-									<a href="https://github.com/yijiangt" class="icon brands fa-github" target="_blank"><span class="ml-3">GitHub</span></a>
-									<a href="https://www.instagram.com/yijiang_t/" class="icon brands fa-instagram" target="_blank"><span class="ml-4">Instagram</span></a>
-									<a href="mailto:yijiangt@umich.edu" class="icon solid fa-envelope" target="_blank"><span class="ml-4">yijiangt@umich.edu</span></a>
+									<a
+										href="https://www.linkedin.com/in/yijiang-tian/"
+										class="icon brands fa-linkedin-in"
+										target="_blank"
+										><span class="ml-4">LinkedIn</span></a
+									>
+									<a
+										href="https://github.com/yijiangt"
+										class="icon brands fa-github"
+										target="_blank"
+										><span class="ml-3">GitHub</span></a
+									>
+									<a
+										href="https://www.instagram.com/yijiang_t/"
+										class="icon brands fa-instagram"
+										target="_blank"
+										><span class="ml-4">Instagram</span></a
+									>
+									<a
+										href="mailto:yijiangt@umich.edu"
+										class="icon solid fa-envelope"
+										target="_blank"
+										><span class="ml-4">weilez@umich.edu</span></a
+									>
 								</div>
 							</div>
 						</div>
@@ -186,7 +224,7 @@
 		<footer id="footer" class="wrapper alt">
 			<div class="inner">
 				<ul class="menu">
-					<li>&copy; James Tian. All rights reserved.</li>
+					<li>Weile Zheng</li>
 					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</div>
