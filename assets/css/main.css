@@ -288,6 +288,23 @@ p {
 	color: #111111;
 }
 
+body.index-page,
+body.about-page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+body.index-page .page-container,
+body.about-page .page-container {
+	flex: 1 0 auto;
+}
+
+body.index-page #footer,
+body.about-page #footer {
+	margin-top: auto;
+}
+
 .about-icons {
 	list-style: none;
 	padding: 0;
