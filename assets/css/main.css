@@ -201,7 +201,7 @@ input, select, textarea {
 	.about-icons a:hover {
 		color: skyblue;
 	}
-	
+
 	.ml-4 {
 		margin-left: 1rem
 	}
@@ -213,7 +213,7 @@ input, select, textarea {
 	#main p,
 	#main ul,
 	#main li {
-	font-family: Arial, Helvetica, sans-serif; 
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1.05rem;
 	line-height: 1.8;
 	color: #333;
@@ -244,7 +244,7 @@ input, select, textarea {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 20px;      
+		padding: 0 20px;
 	} */
 	 /* .about-page #header {
 		background: #ffffff;
@@ -276,7 +276,7 @@ input, select, textarea {
 
 	.index-page body,
 	.about-page body {
-   		background-color: #eaeaea; /* 两边的浅灰色 */
+		background-color: #eaeaea;
 	}
 
 
@@ -317,7 +317,7 @@ input, select, textarea {
 
 
 	.about-page #header .title {
-		margin-right: auto; 
+		margin-right: auto;
 		margin-left: 87px;
 	}
 
@@ -350,9 +350,9 @@ input, select, textarea {
 	.about-page #wrapper a.active:hover,
 	.index-page #wrapper a:hover,
 	.index-page #wrapper a.active:hover {
-		color: #87CEEB;  
+		color: #87CEEB;
 	}
-	
+
 
 	.index-page .logo {
 		width: 80px;
@@ -362,10 +362,10 @@ input, select, textarea {
 		margin-top: 10px;
 		margin-left: 0px;
 	}
-	
 
 
-	.about-page #header nav, 
+
+	.about-page #header nav,
 	.index-page #header nav {
 		position: absolute;
 		left: 50%;
@@ -392,7 +392,7 @@ input, select, textarea {
 	.about-page #header nav a.active:hover,
 	.index-page #header nav a:hover,
 	.index-page #header nav a.active:hover {
-		color: #87CEEB;  
+		color: #87CEEB;
 	}
 
 	.about-page #header nav a.active,
@@ -400,9 +400,51 @@ input, select, textarea {
 		color: #000000;
 	}
 
+	@media screen and (max-width: 980px) {
+		.page-container,
+		.index-page #wrapper,
+		.about-page #wrapper,
+		.page-container #header {
+			width: 100%;
+		}
+
+		.index-page #wrapper,
+		.about-page #wrapper {
+			margin-top: 0;
+			padding: 2rem 1.5rem;
+		}
+
+		.about-page #header .title {
+			margin-left: 0;
+		}
+
+		.about-page #header nav,
+		.index-page #header nav {
+			position: static;
+			transform: none;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.page-container #header {
+			height: auto;
+			padding: 0.75rem 1rem;
+			gap: 0.75rem;
+			justify-content: space-between;
+		}
+
+		.about-page #header nav ul,
+		.index-page #header nav ul {
+			display: flex;
+			gap: 0.75rem;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
 	.project-page p {
 		color: rgba(255, 255, 255, 0.7) !important;
-		line-height: 1.7;	
+		line-height: 1.7;
 		/* font-family: cabinet grotesk; */
 		font-size: 0.9em !important;
 		margin: 0 0 2em 0;
@@ -423,7 +465,7 @@ input, select, textarea {
 		border-radius: 50%;
 		object-fit: cover;
 		display: block;
-		margin: 0 auto 20px; 
+		margin: 0 auto 20px;
 	}
 
 
@@ -431,7 +473,7 @@ input, select, textarea {
 	.video-responsive {
 		position: relative;
 		width: 100%;
-		padding-bottom: 56.25%; /* 高度 = 宽度 * 9/16 => 16:9 比例 */
+		padding-bottom: 56.25%;
 		height: 0;
 		overflow: hidden;
 		margin: 0 auto;
@@ -441,8 +483,8 @@ input, select, textarea {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;   /* 充满屏幕宽度 */
-		height: 100%;  /* 高度随比例自适应 */
+		width: 100%;
+		height: 100%;
 	}
 
 
@@ -2503,7 +2545,7 @@ input, select, textarea {
 
 		}
 
-	
+
 
 
 /* Form */
@@ -2847,14 +2889,14 @@ input, select, textarea {
 
 /* a href */
 a.play-button {
-    color: #e8e288;       /* 金黄色，更显眼 */
+    color: #e8e288;
     font-weight: bold;
     text-decoration: none;
     font-size: 1.1em;
 }
 
 a.play-button:hover {
-    color: #ffffff;       /* hover 时变白 */
+    color: #ffffff;
     text-decoration: underline;
 }
 
@@ -2875,8 +2917,8 @@ a.play-button:hover {
 		}
 
 		.image-row img {
-		width: 22%;     /* 每张图占一行大约 1/4 */
-		border-radius: 6px; /* 可选：圆角 */
+		width: 22%;
+		border-radius: 6px;
 		}
 
 
