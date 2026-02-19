@@ -3934,6 +3934,10 @@ body.is-preload .wrapper.fade > .inner {
 	}
 }
 
+#footer{
+	background-color: white;
+}
+
 #footer > .inner a {
 	border-bottom-color: rgba(255, 255, 255, 0.15);
 }
