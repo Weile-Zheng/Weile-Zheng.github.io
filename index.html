@@ -4,8 +4,20 @@
 		<title>About</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script>
+			(function () {
+				try {
+					var stored = localStorage.getItem("theme-preference");
+					if (stored === "light" || stored === "dark") {
+						document.documentElement.dataset.theme = stored;
+						return;
+					}
+				} catch (e) {}
+				var isDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+				document.documentElement.dataset.theme = isDark ? "dark" : "light";
+			})();
+		</script>
 		<link rel="stylesheet" href="styles/main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dymI6mJ8P7M8bYvNULmEd2SleqU9jwELyhl725LLJoPLD114F8CbnMD4HzyBbs6k8ZZrVSu2Ce/Jb9Ec/WWEDQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="icon" href="images/avatar.jpeg" type="image/jpeg">
 		<style>
 			.about-container {
@@ -119,6 +131,8 @@
 			.work-desc {
 				display: block;
 				margin-top: 0;
+				font-size: 0.98rem;
+				line-height: 1.5;
 			}
 
 			.company-logo {
@@ -146,6 +160,26 @@
 
 			.skill-card p:last-child {
 				margin-bottom: 0;
+			}
+
+			.education-card {
+				margin-bottom: 1rem;
+			}
+
+			.edu-row {
+				display: inline-flex;
+				align-items: center;
+				margin-bottom: 0.15rem;
+			}
+
+			.edu-name-line {
+				font-size: 1rem;
+			}
+
+			.edu-degree {
+				margin: 0;
+				font-size: 0.98rem;
+				line-height: 1.5;
 			}
 
 			.skill-group {
@@ -181,6 +215,32 @@
 				white-space: nowrap;
 			}
 
+			html[data-theme="dark"] .work-section {
+				border-top-color: rgba(176, 197, 226, 0.24);
+			}
+
+			html[data-theme="dark"] .work-grid::before {
+				background: rgba(176, 197, 226, 0.24);
+			}
+
+			html[data-theme="dark"] .internship-list li,
+			html[data-theme="dark"] .skill-card {
+				border-color: rgba(176, 197, 226, 0.24);
+				background: linear-gradient(145deg, #182334, #1f2b3d);
+				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+			}
+
+			html[data-theme="dark"] .company-logo {
+				background: #101827;
+				border-color: rgba(176, 197, 226, 0.24);
+			}
+
+			html[data-theme="dark"] .skill-bubble {
+				background: rgba(122, 198, 255, 0.2);
+				border-color: rgba(137, 208, 255, 0.4);
+				color: #e8f3ff;
+			}
+
 			@media screen and (max-width: 980px) {
 				.work-grid {
 					grid-template-columns: 1fr;
@@ -212,6 +272,7 @@
 							<li><a href="/about">About</a></li>
 						</ul>
 					</nav>
+					<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><i class="far fa-sun" aria-hidden="true"></i></button>
 				</header>
 
 			<!-- Wrapper -->
@@ -296,10 +357,17 @@
 												to help users write better reviews more quickly and effortlessly.</span>
 											</li>
 										</ul>
-									</div>
-									<div>
-										<h3>Technical Skills</h3>
-										<div class="skill-card">
+										</div>
+										<div>
+											<h3>Education</h3>
+											<div class="skill-card education-card">
+												<div class="edu-row">
+													<span class="edu-name-line"><strong>University of Michigan</strong> - 2026</span>
+												</div>
+												<p class="edu-degree">B.S. in Computer Science.</p>
+											</div>
+											<h3>Technical Skills</h3>
+											<div class="skill-card">
 											<div class="skill-group">
 												<strong>Languages:</strong>
 												<div class="skill-bubbles">
@@ -336,6 +404,7 @@
 						</div>
 					</section>
 				</div>
-			</div>
+		</div>
+		<script src="/scripts/theme-toggle.js"></script>
 	</body>
 </html>
