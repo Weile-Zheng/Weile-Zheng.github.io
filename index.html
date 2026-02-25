@@ -39,6 +39,128 @@
 				border-radius: 8px;
 			}
 
+			.work-section {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid rgba(0, 0, 0, 0.08);
+			}
+
+			.work-grid {
+				position: relative;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1.25rem;
+				align-items: start;
+			}
+
+			.work-grid::before {
+				content: "";
+				position: absolute;
+				left: 50%;
+				top: 0.25rem;
+				bottom: 0.25rem;
+				width: 1px;
+				background: rgba(0, 0, 0, 0.12);
+				transform: translateX(-50%);
+			}
+
+			.work-section h3 {
+				margin-bottom: 1rem;
+			}
+
+			.internship-list {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: grid;
+				gap: 0.9rem;
+			}
+
+			.internship-list li {
+				padding: 1rem 1.1rem;
+				border: 1px solid rgba(0, 0, 0, 0.08);
+				border-radius: 14px;
+				background: linear-gradient(145deg, #ffffff, #f6f9fc);
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+				line-height: 1.45;
+			}
+
+			.company-title {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				flex-wrap: wrap;
+			}
+
+			.company-logo {
+				width: 28px;
+				height: 28px;
+				object-fit: contain;
+				border-radius: 4px;
+				background: #ffffff;
+				padding: 2px;
+				border: 1px solid rgba(0, 0, 0, 0.06);
+			}
+
+			.skill-card {
+				padding: 1rem 1.1rem;
+				border: 1px solid rgba(0, 0, 0, 0.08);
+				border-radius: 14px;
+				background: linear-gradient(145deg, #ffffff, #f6f9fc);
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+			}
+
+			.skill-card p {
+				margin: 0 0 1rem 0;
+				line-height: 1.45;
+			}
+
+			.skill-card p:last-child {
+				margin-bottom: 0;
+			}
+
+			.skill-group {
+				margin-bottom: 1rem;
+			}
+
+			.skill-group:last-child {
+				margin-bottom: 0;
+			}
+
+			.skill-group strong {
+				display: block;
+				margin-bottom: 0.45rem;
+			}
+
+			.skill-bubbles {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.45rem;
+			}
+
+			.skill-bubble {
+				display: inline-flex;
+				align-items: center;
+				padding: 0.18rem 0.58rem;
+				border-radius: 999px;
+				border: 1px solid rgba(84, 157, 221, 0.35);
+				background: rgba(135, 206, 235, 0.18);
+				color: #1c2f44;
+				font-size: 0.88rem;
+				line-height: 1.2;
+				white-space: nowrap;
+			}
+
+			@media screen and (max-width: 980px) {
+				.work-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.work-grid::before {
+					display: none;
+				}
+			}
+
 			@media screen and (max-width: 768px) {
 				.about-container {
 					flex-direction: column;
@@ -54,13 +176,13 @@
 		<div class="page-container">
 			<!-- Header -->
 			<header id="header">
-				<nav>
-					<ul>
-						<li><a href="/" class="active">Home</a></li>
-						<li><a href="/about">About</a></li>
-					</ul>
-				</nav>
-			</header>
+					<nav>
+						<ul>
+							<li><a href="/" class="active">Home</a></li>
+							<li><a href="/about">About</a></li>
+						</ul>
+					</nav>
+				</header>
 
 			<!-- Wrapper -->
 			<div id="wrapper">
@@ -86,16 +208,89 @@
 									<li><a href="mailto:weilez@umich.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 							</p>
+
+							</div>
+	
+							<div class="about-image" style="text-align:left; max-width:400px;">
+								<img src="images/home_pic1.jpg" 
+									alt="Home photo" 
+									style="max-width:100%; height:auto; border-radius:12px; margin-bottom:20px;">
+							</div>
 						</div>
 
-						<div class="about-image" style="text-align:left; max-width:400px;">
-							<img src="images/home_pic1.jpg" 
-								alt="Home photo" 
-								style="max-width:100%; height:auto; border-radius:12px; margin-bottom:20px;">
+						<div class="inner">
+							<div class="work-section">
+								<div class="work-grid">
+									<div>
+										<h3>Work Experience</h3>
+										<ul class="internship-list">
+											<li>
+												<strong class="company-title">
+													<img src="images/logos/tesla-linkedin.png" alt="Tesla logo" class="company-logo">
+													Software Engineering Intern — Tesla
+												</strong>
+												<br />Worked on the Cell Software Team where I developed the highly
+												scalable and reliable MES (Manufacturing Execution System) for Tesla
+												cell and battery production.
+											</li>
+											<li>
+												<strong class="company-title">
+													<img src="images/logos/aws-linkedin.png" alt="Amazon Web Services logo" class="company-logo">
+													Software Engineering Intern — Amazon Web Services
+												</strong>
+												<br />Worked on the Access Management Systems team and built internal
+												security tools used across all Amazon organizations for access
+												controls and user permissions management.
+											</li>
+											<li>
+												<strong class="company-title">
+													<img src="images/logos/g2-linkedin.png" alt="G2 logo" class="company-logo">
+													Software Engineer Coop — G2
+												</strong>
+												<br />Designed and developed AI chatbot agents for the review platform
+												to help users write better reviews more quickly and effortlessly.
+											</li>
+										</ul>
+									</div>
+									<div>
+										<h3>Technical Skills</h3>
+										<div class="skill-card">
+											<div class="skill-group">
+												<strong>Languages:</strong>
+												<div class="skill-bubbles">
+													<span class="skill-bubble">C++</span>
+													<span class="skill-bubble">Python</span>
+													<span class="skill-bubble">Go</span>
+													<span class="skill-bubble">Javascript/Typescript</span>
+													<span class="skill-bubble">HTML/CSS</span>
+													<span class="skill-bubble">SQL</span>
+												</div>
+											</div>
+											<div class="skill-group">
+												<strong>Technologies:</strong>
+												<div class="skill-bubbles">
+													<span class="skill-bubble">Flask</span>
+													<span class="skill-bubble">FastAPI</span>
+													<span class="skill-bubble">NodeJS</span>
+													<span class="skill-bubble">React</span>
+													<span class="skill-bubble">AWS</span>
+													<span class="skill-bubble">Azure</span>
+													<span class="skill-bubble">Docker</span>
+													<span class="skill-bubble">Kubernetes</span>
+													<span class="skill-bubble">PostgreSQL</span>
+													<span class="skill-bubble">Kafka</span>
+													<span class="skill-bubble">GraphQL</span>
+													<span class="skill-bubble">Git</span>
+													<span class="skill-bubble">PyTorch</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
 			</div>
-		</div>
 	</body>
 </html>
