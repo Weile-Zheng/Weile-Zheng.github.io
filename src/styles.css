@@ -770,3 +770,399 @@ ul.menu > li:first-child {
 #header + #wrapper + #footer > .inner {
 	margin: 0 auto;
 }
+
+/* Index page-specific styles (from legacy inline styles) */
+.index-page .about-container {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.index-page .about-text {
+	flex: 1;
+	max-width: 50%;
+}
+
+.index-page .about-image {
+	flex: 1;
+	max-width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.index-page .about-icon {
+	flex: 1;
+	display: flex;
+}
+
+.index-page .about-image img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.index-page .work-section {
+	margin-top: 3rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.index-page .work-grid {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.25rem;
+	align-items: start;
+}
+
+.index-page .work-grid::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0.25rem;
+	bottom: 0.25rem;
+	width: 1px;
+	background: rgba(0, 0, 0, 0.12);
+	transform: translateX(-50%);
+}
+
+.index-page .work-section h3 {
+	margin-bottom: 1rem;
+	font-size: 1.18rem;
+}
+
+.index-page .internship-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 0.9rem;
+}
+
+.index-page .internship-list li {
+	padding: 1rem 1.1rem;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 14px;
+	background: linear-gradient(145deg, #ffffff, #f6f9fc);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+	line-height: 1.45;
+}
+
+.index-page .company-title {
+	display: block;
+	margin-bottom: 0;
+}
+
+.index-page .company-row {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.65rem;
+	line-height: 1.2;
+}
+
+.index-page .company-text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.03rem;
+}
+
+.index-page .company-name {
+	font-size: 1.04rem;
+}
+
+.index-page .role-title {
+	font-weight: 400;
+	font-size: 0.95rem;
+	line-height: 1.2;
+	font-style: italic;
+	margin-left: 0;
+}
+
+.index-page .work-desc {
+	display: block;
+	margin-top: 0;
+	font-size: 0.98rem;
+	line-height: 1.5;
+}
+
+.index-page .company-logo {
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	border-radius: 4px;
+	background: #ffffff;
+	padding: 2px;
+	border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.index-page .skill-card {
+	padding: 1rem 1.1rem;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 14px;
+	background: linear-gradient(145deg, #ffffff, #f6f9fc);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.index-page .skill-card p {
+	margin: 0 0 1rem 0;
+	line-height: 1.45;
+}
+
+.index-page .skill-card p:last-child {
+	margin-bottom: 0;
+}
+
+.index-page .education-card {
+	margin-bottom: 1rem;
+}
+
+.index-page .edu-row {
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 0.15rem;
+}
+
+.index-page .edu-name-line {
+	font-size: 1rem;
+}
+
+.index-page .edu-degree {
+	margin: 0;
+	font-size: 0.98rem;
+	line-height: 1.5;
+}
+
+.index-page .skill-group {
+	margin-bottom: 1rem;
+}
+
+.index-page .skill-group:last-child {
+	margin-bottom: 0;
+}
+
+.index-page .skill-group strong {
+	display: block;
+	margin-bottom: 0.45rem;
+	font-size: 1rem;
+}
+
+.index-page .skill-bubbles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.index-page .skill-bubble {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.24rem 0.62rem;
+	border-radius: 999px;
+	border: 1px solid rgba(84, 157, 221, 0.35);
+	background: rgba(135, 206, 235, 0.18);
+	color: #1c2f44;
+	font-size: 0.95rem;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+
+html[data-theme="dark"] .index-page .work-section {
+	border-top-color: rgba(176, 197, 226, 0.24);
+}
+
+html[data-theme="dark"] .index-page .work-grid::before {
+	background: rgba(176, 197, 226, 0.24);
+}
+
+html[data-theme="dark"] .index-page .internship-list li,
+html[data-theme="dark"] .index-page .skill-card {
+	border-color: rgba(176, 197, 226, 0.24);
+	background: linear-gradient(145deg, #182334, #1f2b3d);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+}
+
+html[data-theme="dark"] .index-page .company-logo {
+	background: #101827;
+	border-color: rgba(176, 197, 226, 0.24);
+}
+
+html[data-theme="dark"] .index-page .skill-bubble {
+	background: rgba(122, 198, 255, 0.2);
+	border-color: rgba(137, 208, 255, 0.4);
+	color: #e8f3ff;
+}
+
+@media screen and (max-width: 980px) {
+	.index-page .work-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.index-page .work-grid::before {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.index-page .about-container {
+		flex-direction: column;
+	}
+	.index-page .about-text,
+	.index-page .about-image {
+		max-width: 100%;
+	}
+}
+
+/* About page-specific styles (from legacy inline styles) */
+.about-page .about-container {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.about-page .about-text {
+	flex: 1;
+	max-width: 50%;
+}
+
+.about-page .about-image {
+	flex: 1;
+	max-width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.about-page .about-image .top {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-page .about-image .bottom {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 10px;
+}
+
+.about-page .about-icons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 8px;
+	margin-top: 20px;
+}
+
+.about-page .about-icons a {
+	font-size: 1rem;
+	color: #333;
+	text-decoration: none !important;
+	font-weight: normal !important;
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.about-page .about-icons a span {
+	font-size: 0.9rem;
+}
+
+.about-page .about-icons a:last-child {
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+	padding-top: 25px;
+	margin-top: 25px;
+	width: 420px;
+}
+
+html[data-theme="dark"] .about-page .about-icons a {
+	color: #dbe6f6;
+}
+
+html[data-theme="dark"] .about-page .about-icons a:last-child {
+	border-top-color: rgba(176, 197, 226, 0.24);
+}
+
+.about-page .about-image img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+	.about-page .about-container {
+		flex-direction: column;
+	}
+	.about-page .about-text,
+	.about-page .about-image {
+		max-width: 100%;
+	}
+}
+
+.about-page .about-text h1.major,
+.about-page .about-text h3,
+.about-page .about-text h4 {
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	line-height: 1.3;
+}
+
+.about-page .about-text h1.major {
+	margin-bottom: 1rem;
+}
+
+.about-page .about-section {
+	margin-top: 1.75rem;
+}
+
+.about-page .about-section > :last-child {
+	margin-bottom: 1.25rem;
+}
+
+.about-page .about-section ul {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.about-page .internship-list {
+	margin: 0;
+	padding-left: 1.2rem;
+	list-style: disc;
+}
+
+.about-page .internship-list li {
+	margin-bottom: 0.45rem;
+	line-height: 1.4;
+}
+
+@media screen and (max-width: 980px) {
+	.about-page .about-container {
+		gap: 1.25rem;
+	}
+
+	.about-page .about-icons a:last-child {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.about-page .about-image {
+		max-width: 100%;
+	}
+
+	.about-page .about-image .top,
+	.about-page .about-image .bottom {
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	.about-page .work-meta span {
+		display: inline-block;
+		margin-right: 0.25rem;
+	}
+}
