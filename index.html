@@ -66,6 +66,7 @@
 
 			.work-section h3 {
 				margin-bottom: 1rem;
+				font-size: 1.18rem;
 			}
 
 			.internship-list {
@@ -86,15 +87,43 @@
 			}
 
 			.company-title {
+				display: block;
+				margin-bottom: 0;
+			}
+
+			.company-row {
 				display: inline-flex;
 				align-items: center;
-				gap: 0.5rem;
-				flex-wrap: wrap;
+				gap: 0.65rem;
+				line-height: 1.2;
+			}
+
+			.company-text {
+				display: flex;
+				flex-direction: column;
+				gap: 0.03rem;
+			}
+
+			.company-name {
+				font-size: 1.04rem;
+			}
+
+			.role-title {
+				font-weight: 400;
+				font-size: 0.95rem;
+				line-height: 1.2;
+				font-style: italic;
+				margin-left: 0;
+			}
+
+			.work-desc {
+				display: block;
+				margin-top: 0;
 			}
 
 			.company-logo {
-				width: 28px;
-				height: 28px;
+				width: 40px;
+				height: 40px;
 				object-fit: contain;
 				border-radius: 4px;
 				background: #ffffff;
@@ -130,6 +159,7 @@
 			.skill-group strong {
 				display: block;
 				margin-bottom: 0.45rem;
+				font-size: 1rem;
 			}
 
 			.skill-bubbles {
@@ -141,12 +171,12 @@
 			.skill-bubble {
 				display: inline-flex;
 				align-items: center;
-				padding: 0.18rem 0.58rem;
+				padding: 0.24rem 0.62rem;
 				border-radius: 999px;
 				border: 1px solid rgba(84, 157, 221, 0.35);
 				background: rgba(135, 206, 235, 0.18);
 				color: #1c2f44;
-				font-size: 0.88rem;
+				font-size: 0.95rem;
 				line-height: 1.2;
 				white-space: nowrap;
 			}
@@ -226,29 +256,44 @@
 										<ul class="internship-list">
 											<li>
 												<strong class="company-title">
-													<img src="images/logos/tesla-linkedin.png" alt="Tesla logo" class="company-logo">
-													Software Engineering Intern — Tesla
+													<span class="company-row">
+														<img src="images/logos/tesla-linkedin.png" alt="Tesla logo" class="company-logo">
+														<span class="company-text">
+															<span class="company-name">Tesla</span>
+															<span class="role-title">Software Engineering Intern</span>
+														</span>
+													</span>
 												</strong>
-												<br />Worked on the Cell Software Team where I developed the highly
+												<span class="work-desc">Worked on the Cell Software Team where I developed the highly
 												scalable and reliable MES (Manufacturing Execution System) for Tesla
-												cell and battery production.
+												cell and battery production.</span>
 											</li>
 											<li>
 												<strong class="company-title">
-													<img src="images/logos/aws-linkedin.png" alt="Amazon Web Services logo" class="company-logo">
-													Software Engineering Intern — Amazon Web Services
+													<span class="company-row">
+														<img src="images/logos/aws-linkedin.png" alt="Amazon Web Services logo" class="company-logo">
+														<span class="company-text">
+															<span class="company-name">Amazon Web Services</span>
+															<span class="role-title">Software Engineering Intern</span>
+														</span>
+													</span>
 												</strong>
-												<br />Worked on the Access Management Systems team and built internal
+												<span class="work-desc">Worked on the Access Management Systems team and built internal
 												security tools used across all Amazon organizations for access
-												controls and user permissions management.
+												controls and user permissions management.</span>
 											</li>
 											<li>
 												<strong class="company-title">
-													<img src="images/logos/g2-linkedin.png" alt="G2 logo" class="company-logo">
-													Software Engineer Coop — G2
+													<span class="company-row">
+														<img src="images/logos/g2-linkedin.png" alt="G2 logo" class="company-logo">
+														<span class="company-text">
+															<span class="company-name">G2</span>
+															<span class="role-title">Software Engineer Co-op</span>
+														</span>
+													</span>
 												</strong>
-												<br />Designed and developed AI chatbot agents for the review platform
-												to help users write better reviews more quickly and effortlessly.
+												<span class="work-desc">Designed and developed AI chatbot agents for the review platform
+												to help users write better reviews more quickly and effortlessly.</span>
 											</li>
 										</ul>
 									</div>
