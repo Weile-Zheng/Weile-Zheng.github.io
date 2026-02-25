@@ -278,8 +278,8 @@ function AboutPage() {
           </p>
 
           <p>
-            I was fortunate to be part of two amazing student organizations at UM. I was a VP at
-            <strong>MDST</strong>, the largest data science club at the university, and a member of
+            I was fortunate to be part of two amazing student organizations at UM. I was a VP at 
+            <strong>MDST</strong>, the largest data science club at the university, and a member of 
             <strong>V1</strong>, a top community for ambitious student builders.
           </p>
           <p>
