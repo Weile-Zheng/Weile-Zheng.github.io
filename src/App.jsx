@@ -71,6 +71,13 @@ function HomePage() {
     document.title = 'Weile Zheng';
   }, []);
 
+  const scrollToDetails = () => {
+    const detailsSection = document.getElementById('home-details');
+    if (detailsSection) {
+      detailsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="main" className="wrapper">
       <div className="inner about-container">
@@ -129,7 +136,19 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="inner">
+      <div className="scroll-cue-wrap">
+        <button
+          type="button"
+          className="scroll-cue"
+          onClick={scrollToDetails}
+          aria-label="Scroll down to work experience"
+          title="Scroll down"
+        >
+          <i className="fas fa-chevron-down" aria-hidden="true" />
+        </button>
+      </div>
+
+      <div className="inner" id="home-details">
         <div className="work-section">
           <div className="work-grid">
             <div>
@@ -336,14 +355,6 @@ function AppShell() {
           </Routes>
         </div>
       </div>
-
-      <footer id="footer" className="wrapper alt">
-        <div className="inner">
-          <ul className="menu">
-            <li>Weile Zheng</li>
-          </ul>
-        </div>
-      </footer>
     </>
   );
 }
