@@ -368,10 +368,10 @@ function VantaBackground() {
       scale: 1.0,
       scaleMobile: 1.0,
       backgroundColor: theme === 'dark' ? 0x000000 : 0xffffff,
-      color: theme === 'dark' ? 0x1d4f9a : 0xa7b0bb,
-      shininess: theme === 'dark' ? 42 : 34,
-      waveHeight: theme === 'dark' ? 16 : 14,
-      waveSpeed: theme === 'dark' ? 0.72 : 0.8,
+      color: theme === 'dark' ? 0x000000 : 0xa7b0bb,
+      shininess: theme === 'dark' ? 28 : 34,
+      waveHeight: theme === 'dark' ? 13 : 14,
+      waveSpeed: theme === 'dark' ? 0.6 : 0.8,
       zoom: 0.95,
     });
 
