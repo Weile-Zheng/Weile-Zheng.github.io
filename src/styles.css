@@ -1,6 +1,12 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 
+@property --beam-angle {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: -90deg;
+}
+
 :root {
 	color-scheme: light;
 	--body-bg: #ffffff;
@@ -23,6 +29,8 @@
 	--shadow-soft: none;
 	--major-gradient-start: #7a8594;
 	--major-gradient-end: #b3bcc8;
+	--card-beam: rgba(76, 142, 207, 0.98);
+	--card-beam-glow: rgba(108, 167, 223, 0.78);
 }
 
 html[data-theme="dark"] {
@@ -47,6 +55,8 @@ html[data-theme="dark"] {
 	--shadow-soft: none;
 	--major-gradient-start: #8f98a6;
 	--major-gradient-end: #c0c7d2;
+	--card-beam: rgba(160, 225, 255, 1);
+	--card-beam-glow: rgba(120, 201, 255, 0.72);
 }
 
 /* Reset */
@@ -964,6 +974,9 @@ ul.menu > li:first-child {
 	background: linear-gradient(145deg, #ffffff, #f6f9fc);
 	box-shadow: none;
 	line-height: 1.45;
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
 }
 
 .index-page .company-title {
@@ -1019,6 +1032,81 @@ ul.menu > li:first-child {
 	border-radius: 14px;
 	background: linear-gradient(145deg, #ffffff, #f6f9fc);
 	box-shadow: none;
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+}
+
+.index-page .internship-list li::before,
+.index-page .skill-card::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1.2px;
+	background: conic-gradient(
+		from var(--beam-angle, -90deg),
+		var(--card-beam) 0deg,
+		transparent 18deg,
+		transparent 360deg
+	);
+	-webkit-mask:
+		linear-gradient(#000 0 0) content-box,
+		linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	pointer-events: none;
+}
+
+.index-page .internship-list li::after,
+.index-page .skill-card::after {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	border-radius: inherit;
+	padding: 1.2px;
+	background: conic-gradient(
+		from var(--beam-angle, -90deg),
+		var(--card-beam-glow) 0deg,
+		transparent 24deg,
+		transparent 360deg
+	);
+	filter: blur(6px);
+	-webkit-mask:
+		linear-gradient(#000 0 0) content-box,
+		linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+	pointer-events: none;
+}
+
+.index-page .internship-list li:hover::before,
+.index-page .internship-list li:focus-within::before,
+.index-page .skill-card:hover::before,
+.index-page .skill-card:focus-within::before {
+	opacity: 1;
+	animation: card-beam-travel 1.8s linear infinite;
+}
+
+.index-page .internship-list li:hover::after,
+.index-page .internship-list li:focus-within::after,
+.index-page .skill-card:hover::after,
+.index-page .skill-card:focus-within::after {
+	opacity: 1;
+	animation: card-beam-travel 1.8s linear infinite;
+}
+
+@keyframes card-beam-travel {
+	0% {
+		--beam-angle: -90deg;
+	}
+	100% {
+		--beam-angle: 270deg;
+	}
 }
 
 .index-page .skill-card p {
@@ -1152,6 +1240,17 @@ html[data-theme="dark"] .index-page .skill-bubble {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	.index-page .internship-list li:hover::before,
+	.index-page .internship-list li:focus-within::before,
+	.index-page .internship-list li:hover::after,
+	.index-page .internship-list li:focus-within::after,
+	.index-page .skill-card:hover::before,
+	.index-page .skill-card:focus-within::before,
+	.index-page .skill-card:hover::after,
+	.index-page .skill-card:focus-within::after {
+		animation: none;
+	}
+
 	.index-page .scroll-cue {
 		animation: none;
 	}
