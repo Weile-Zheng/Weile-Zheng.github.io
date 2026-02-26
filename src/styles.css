@@ -971,7 +971,7 @@ ul.menu > li:first-child {
 	padding: 1rem 1.1rem;
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	border-radius: 14px;
-	background: linear-gradient(145deg, #ffffff, #f6f9fc);
+	background: rgba(240, 240, 240, 0.7);
 	box-shadow: none;
 	line-height: 1.45;
 	position: relative;
@@ -1030,7 +1030,7 @@ ul.menu > li:first-child {
 	padding: 1rem 1.1rem;
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	border-radius: 14px;
-	background: linear-gradient(145deg, #ffffff, #f6f9fc);
+	background: rgba(240, 240, 240, 0.7);
 	box-shadow: none;
 	position: relative;
 	isolation: isolate;
@@ -1182,7 +1182,7 @@ html[data-theme="dark"] .index-page .work-grid::before {
 html[data-theme="dark"] .index-page .internship-list li,
 html[data-theme="dark"] .index-page .skill-card {
 	border-color: rgba(176, 197, 226, 0.24);
-	background: linear-gradient(145deg, #182334, #1f2b3d);
+	background: rgba(40, 40, 40, 0.7);
 	box-shadow: none;
 }
 
