@@ -1,5 +1,5 @@
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 function ThemeToggle() {
   const initialTheme = useMemo(() => {
@@ -32,9 +32,9 @@ function ThemeToggle() {
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
       {isDark ? (
-        <i className="fas fa-moon" aria-hidden="true" />
-      ) : (
         <i className="far fa-sun" aria-hidden="true" />
+      ) : (
+        <i className="fas fa-moon" aria-hidden="true" />
       )}
     </button>
   );
@@ -80,7 +80,7 @@ function HomePage() {
 
   return (
     <section id="main" className="wrapper">
-      <div className="inner about-container">
+      <div className="inner about-container home-hero">
         <div className="about-text">
           <NavLink to="/" className="title">
             <img src="/images/avatar.jpeg" alt="My Avatar" className="logo" />
@@ -125,14 +125,6 @@ function HomePage() {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="about-image" style={{ textAlign: 'left', maxWidth: '400px' }}>
-          <img
-            src="/images/home_pic1.jpg"
-            alt="Home photo"
-            style={{ maxWidth: '100%', height: 'auto', borderRadius: '12px', marginBottom: '20px' }}
-          />
         </div>
       </div>
 
@@ -278,9 +270,9 @@ function AboutPage() {
           </p>
 
           <p>
-            I was fortunate to be part of two amazing student organizations at UM. I was a VP at 
-            <strong>MDST</strong>, the largest data science club at the university, and a member of 
-            <strong>V1</strong>, a top community for ambitious student builders.
+            I was fortunate to be part of two amazing student organizations at UM. I was a 
+            VP at <strong>MDST</strong>, the largest data science club at the university, 
+            and a member of <strong>V1</strong>, a top community for ambitious student builders.
           </p>
           <p>
             I had the opportunity to intern at several different places during my 4 years of
@@ -336,6 +328,64 @@ function AboutPage() {
   );
 }
 
+function VantaBackground() {
+  const backgroundRef = useRef(null);
+  const vantaRef = useRef(null);
+  const [theme, setTheme] = useState(
+    document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light',
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const observer = new MutationObserver(() => {
+      setTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return undefined;
+    }
+
+    if (!backgroundRef.current || !window.VANTA || !window.VANTA.WAVES) {
+      return undefined;
+    }
+
+    if (vantaRef.current) {
+      vantaRef.current.destroy();
+    }
+
+    vantaRef.current = window.VANTA.WAVES({
+      el: backgroundRef.current,
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundColor: theme === 'dark' ? 0x000000 : 0xffffff,
+      color: theme === 'dark' ? 0x1d4f9a : 0xa7b0bb,
+      shininess: theme === 'dark' ? 42 : 34,
+      waveHeight: theme === 'dark' ? 16 : 14,
+      waveSpeed: theme === 'dark' ? 0.72 : 0.8,
+      zoom: 0.95,
+    });
+
+    return () => {
+      if (vantaRef.current) {
+        vantaRef.current.destroy();
+        vantaRef.current = null;
+      }
+    };
+  }, [theme]);
+
+  return <div ref={backgroundRef} className="vanta-bg" aria-hidden="true" />;
+}
+
 function AppShell() {
   const location = useLocation();
   const isAbout = location.pathname === '/about';
@@ -346,13 +396,16 @@ function AppShell() {
 
   return (
     <>
+      <VantaBackground />
       <div className="page-container">
-        <Header isAbout={isAbout} />
-        <div id="wrapper">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-          </Routes>
+        <div className="content-shell">
+          <Header isAbout={isAbout} />
+          <div id="wrapper">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </>
