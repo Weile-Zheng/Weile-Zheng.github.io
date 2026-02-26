@@ -1163,8 +1163,8 @@ ul.menu > li:first-child {
 	align-items: center;
 	padding: 0.24rem 0.62rem;
 	border-radius: 999px;
-	border: 1px solid rgba(84, 157, 221, 0.35);
-	background: rgba(135, 206, 235, 0.18);
+	border: 1px solid rgba(128, 128, 128, 0.3);
+	background: rgba(200, 200, 200, 0.5);
 	color: #1c2f44;
 	font-size: 0.95rem;
 	line-height: 1.2;
@@ -1201,8 +1201,8 @@ html[data-theme="dark"] .index-page .company-logo {
 }
 
 html[data-theme="dark"] .index-page .skill-bubble {
-	background: rgba(122, 198, 255, 0.2);
-	border-color: rgba(137, 208, 255, 0.4);
+	background: rgba(60, 60, 60, 0.5);
+	border-color: rgba(128, 128, 128, 0.3);
 	color: #e8f3ff;
 }
 
