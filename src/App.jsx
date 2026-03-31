@@ -6,7 +6,7 @@ const BLOG_POSTS = [
 	{
 		id: "replication-and-sharding",
 		title: "Replication and Sharding",
-		date: "March 31, 2026",
+		date: "September 4, 2025",
 		content: replicationAndShardingMarkdown,
 	},
 ];
