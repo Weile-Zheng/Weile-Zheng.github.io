@@ -341,29 +341,35 @@ b {
 }
 
 .about-page #header a,
-.index-page #header a {
+.index-page #header a,
+.blog-page #header a {
 	color: var(--header-link);
 }
 
 .about-page #header a:hover,
-.index-page #header a:hover {
+.index-page #header a:hover,
+.blog-page #header a:hover {
 	color: var(--header-link-active);
 }
 
 .about-page #header nav a,
-.index-page #header nav a {
+.index-page #header nav a,
+.blog-page #header nav a {
 	color: var(--header-link-muted);
 }
 
 .about-page #header nav a:hover,
 .about-page #header nav a.active:hover,
 .index-page #header nav a:hover,
-.index-page #header nav a.active:hover {
+.index-page #header nav a.active:hover,
+.blog-page #header nav a:hover,
+.blog-page #header nav a.active:hover {
 	color: var(--accent);
 }
 
 .about-page #header nav a.active,
-.index-page #header nav a.active {
+.index-page #header nav a.active,
+.blog-page #header nav a.active {
 	color: var(--header-link-active);
 }
 
@@ -1253,6 +1259,180 @@ html[data-theme="dark"] .index-page .skill-bubble {
 
 	.index-page .scroll-cue {
 		animation: none;
+	}
+}
+
+/* Blog page-specific styles */
+.blog-page #wrapper {
+	background-color: transparent;
+	width: 100%;
+	margin: -60px auto 0;
+	padding: 40px;
+}
+
+.blog-page #header .title {
+	margin-right: auto;
+	margin-left: 87px;
+}
+
+.blog-page #header nav {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+}
+
+.blog-page #header nav > ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.blog-page #header nav > ul > li {
+	margin-left: 0;
+}
+
+.blog-page #header nav > ul > li a {
+	position: relative;
+	isolation: isolate;
+	padding: 0.34rem 0.7rem;
+	border-radius: 999px;
+	transition:
+		background-color 0.25s ease,
+		color 0.2s ease;
+}
+
+.blog-page #header nav > ul > li a::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 999px;
+	background: rgba(135, 206, 235, 0.2);
+	transform: scale(0.7);
+	opacity: 0;
+	transition:
+		transform 0.22s ease,
+		opacity 0.22s ease;
+	z-index: -1;
+}
+
+.blog-page #header nav > ul > li a:hover::before {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.blog-page #header nav > ul > li a.active {
+	background: rgba(135, 206, 235, 0.25);
+	color: var(--header-link-active);
+}
+
+.blog-page #header nav > ul > li a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+html[data-theme="dark"] .blog-page #header nav > ul > li a.active {
+	background: rgba(137, 208, 255, 0.22);
+}
+
+html[data-theme="dark"] .blog-page #header nav > ul > li a::before {
+	background: rgba(137, 208, 255, 0.18);
+}
+
+.blog-page .blog-container {
+	max-width: 52rem;
+}
+
+.blog-page .blog-post-container {
+	max-width: 64rem;
+}
+
+.blog-page .blog-header p {
+	margin-bottom: 1.4rem;
+}
+
+.blog-page .blog-title-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.6rem 0;
+}
+
+.blog-page .blog-title-list li {
+	display: flex;
+	align-items: baseline;
+	gap: 0.75rem;
+	padding: 0.2rem 0;
+}
+
+.blog-page .blog-title-list a {
+	font-weight: 600;
+}
+
+.blog-page .blog-title-date {
+	margin-left: auto;
+	font-size: 0.88rem;
+	color: var(--header-link-muted);
+}
+
+.blog-page .blog-post-markdown h1 {
+	font-size: 2em;
+	margin-bottom: 0.7rem;
+}
+
+.blog-page .blog-post-markdown h2 {
+	font-size: 1.25em;
+	margin-top: 1.2rem;
+	margin-bottom: 0.6rem;
+}
+
+.blog-page .blog-post-markdown p {
+	margin: 0 0 1rem 0;
+	line-height: 1.75;
+}
+
+.blog-page .blog-post-markdown ul {
+	margin: 0 0 1rem 0;
+	padding-left: 1.2rem;
+}
+
+.blog-page .blog-post-markdown li {
+	margin-bottom: 0.35rem;
+}
+
+@media screen and (max-width: 980px) {
+	.blog-page #wrapper {
+		margin-top: 0;
+		padding: 2rem 1.5rem;
+	}
+
+	.blog-page #header .title {
+		margin-left: 0;
+	}
+
+	.blog-page #header nav {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.blog-page #header nav ul {
+		display: flex;
+		gap: 0.75rem;
+		padding: 0;
+		margin: 0;
+	}
+
+	.blog-page .blog-title-list li {
+		flex-direction: column;
+		gap: 0.1rem;
+	}
+
+	.blog-page .blog-title-date {
+		margin-left: 0;
 	}
 }
 
